@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ScytlAppDefinitivo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4I-B3-vyB">
+                                <rect key="frame" x="48" y="495" width="224" height="42"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
+                                <state key="normal" title="Create New Schedule">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.050980392156862744" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hzZ-aP-7AB" kind="presentation" id="8p1-Yp-gOf"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpx-aQ-DPb">
+                                <rect key="frame" x="16" y="98" width="288" height="377"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSchedule" textLabel="fdf-HU-plH" style="IBUITableViewCellStyleDefault" id="jmz-Y7-ND2">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jmz-Y7-ND2" id="M6k-Cu-yRt">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fdf-HU-plH">
+                                                    <rect key="frame" x="15" y="0.0" width="258" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9sz-Ae-ZJf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YLV-2g-Ldb"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scytl" translatesAutoresizingMaskIntoConstraints="NO" id="OnN-HM-SGN">
+                                <rect key="frame" x="20" y="35" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NR4-mA-rLc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="oMp-A4-Q00"/>
+                                    <constraint firstAttribute="width" constant="30" id="ur3-2t-0ME"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ww-iE-eeZ">
+                                <rect key="frame" x="247" y="41" width="56" height="32"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vPL-mN-Jka"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.89684703579418334" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wpx-aQ-DPb" firstAttribute="centerX" secondItem="s4I-B3-vyB" secondAttribute="centerX" id="Cm0-KI-BPv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ww-iE-eeZ" secondAttribute="trailing" constant="17" id="Eub-Fi-DG0"/>
+                            <constraint firstItem="s4I-B3-vyB" firstAttribute="top" secondItem="wpx-aQ-DPb" secondAttribute="bottom" constant="20" id="GyQ-P1-EFE"/>
+                            <constraint firstItem="1Ww-iE-eeZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="HLM-HS-fI6"/>
+                            <constraint firstItem="wpx-aQ-DPb" firstAttribute="top" secondItem="OnN-HM-SGN" secondAttribute="bottom" constant="23" id="L2I-rG-HQx"/>
+                            <constraint firstItem="OnN-HM-SGN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XN4-BX-oLA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s4I-B3-vyB" secondAttribute="bottom" constant="31" id="YNp-4h-xig"/>
+                            <constraint firstItem="wpx-aQ-DPb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZLg-0b-n6x"/>
+                            <constraint firstItem="OnN-HM-SGN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="qHU-iy-vtG"/>
+                            <constraint firstItem="wpx-aQ-DPb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zW5-5p-ILt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wpx-aQ-DPb" id="pvR-0E-reB"/>
+                        <segue destination="3eL-bx-eGs" kind="show" identifier="segue" id="8YM-rn-vkW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-240" y="133.09859154929578"/>
+        </scene>
+        <!--Update Delete Schedule Page-->
+        <scene sceneID="LrO-0q-4ia">
+            <objects>
+                <viewController id="3eL-bx-eGs" customClass="UpdateDeleteSchedulePage" customModule="ScytlAppDefinitivo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AFd-WR-wVt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLe-Fi-R72">
+                                <rect key="frame" x="16" y="89" width="288" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Dm-08-4E8">
+                                <rect key="frame" x="16" y="144" width="288" height="248"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this schedule completed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-7f-mM0">
+                                <rect key="frame" x="26" y="414" width="151" height="16"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="BbA-fW-ix7">
+                                <rect key="frame" x="183" y="408" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="No"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="IsCompleted:" destination="3eL-bx-eGs" eventType="valueChanged" id="JE6-Pk-RaE"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xed-dA-E5w">
+                                <rect key="frame" x="16" y="452" width="288" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEU-zn-1aU">
+                                <rect key="frame" x="20" y="513" width="130" height="32"/>
+                                <color key="backgroundColor" red="0.5" green="0.051662019679999997" blue="0.34951504719999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="qfB-A9-lHt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Update Schedule">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="updateButton:" destination="3eL-bx-eGs" eventType="touchUpInside" id="ePJ-kb-JAp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlL-dW-rWi">
+                                <rect key="frame" x="170" y="513" width="130" height="32"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.23921568627450979" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Delete Schedule">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteButton:" destination="3eL-bx-eGs" eventType="touchUpInside" id="jNF-ck-oT0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn6-G7-DCN">
+                                <rect key="frame" x="10" y="35" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="9yj-Xz-RZE"/>
+                                    <constraint firstAttribute="height" constant="35" id="BKt-2O-syi"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="WhiteArrow"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="Yn6-G7-DCN" id="0jd-hm-O6g">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpJ-lg-nw0">
+                                <rect key="frame" x="53" y="36" width="36" height="32"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="gI8-Cr-5er"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.89911912751677847" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yn6-G7-DCN" firstAttribute="centerY" secondItem="TpJ-lg-nw0" secondAttribute="centerY" id="2ax-Db-fHc"/>
+                            <constraint firstItem="RlL-dW-rWi" firstAttribute="leading" secondItem="EEU-zn-1aU" secondAttribute="trailing" constant="20" id="5Ry-sY-qBT"/>
+                            <constraint firstItem="QLe-Fi-R72" firstAttribute="leading" secondItem="8Dm-08-4E8" secondAttribute="leading" id="7Y3-nV-XyQ"/>
+                            <constraint firstItem="8Dm-08-4E8" firstAttribute="leading" secondItem="xed-dA-E5w" secondAttribute="leading" id="8If-gc-wyC"/>
+                            <constraint firstItem="QLe-Fi-R72" firstAttribute="leading" secondItem="AFd-WR-wVt" secondAttribute="leadingMargin" id="FXG-dd-ARA"/>
+                            <constraint firstItem="EEU-zn-1aU" firstAttribute="baseline" secondItem="RlL-dW-rWi" secondAttribute="baseline" id="GeM-aF-l1H"/>
+                            <constraint firstItem="BbA-fW-ix7" firstAttribute="trailing" secondItem="xed-dA-E5w" secondAttribute="trailing" id="Hr5-Zs-3Bu"/>
+                            <constraint firstItem="QLe-Fi-R72" firstAttribute="trailing" secondItem="8Dm-08-4E8" secondAttribute="trailing" id="Jjw-mF-HVy"/>
+                            <constraint firstItem="QLe-Fi-R72" firstAttribute="top" secondItem="Yn6-G7-DCN" secondAttribute="bottom" constant="19" id="JuU-8Q-4fx"/>
+                            <constraint firstItem="xed-dA-E5w" firstAttribute="top" secondItem="BbA-fW-ix7" secondAttribute="bottom" constant="16" id="MVU-e7-O3S"/>
+                            <constraint firstItem="c90-oW-uIE" firstAttribute="bottom" secondItem="EEU-zn-1aU" secondAttribute="bottom" constant="23" id="PvG-xe-ypa"/>
+                            <constraint firstItem="8Dm-08-4E8" firstAttribute="top" secondItem="QLe-Fi-R72" secondAttribute="bottom" constant="25" id="S5a-9n-msq"/>
+                            <constraint firstItem="Yn6-G7-DCN" firstAttribute="top" secondItem="c90-oW-uIE" secondAttribute="top" constant="15" id="VaJ-Nl-QaS"/>
+                            <constraint firstItem="Yn6-G7-DCN" firstAttribute="leading" secondItem="c90-oW-uIE" secondAttribute="leading" constant="10" id="Zpf-HI-zl0"/>
+                            <constraint firstItem="BbA-fW-ix7" firstAttribute="top" secondItem="8Dm-08-4E8" secondAttribute="bottom" constant="16" id="aYV-aq-vhu"/>
+                            <constraint firstItem="EEU-zn-1aU" firstAttribute="leading" secondItem="c90-oW-uIE" secondAttribute="leading" constant="20" id="acl-Gq-ORI"/>
+                            <constraint firstItem="8Dm-08-4E8" firstAttribute="trailing" secondItem="BbA-fW-ix7" secondAttribute="trailing" id="fYT-uC-1Uv"/>
+                            <constraint firstItem="EEU-zn-1aU" firstAttribute="top" secondItem="xed-dA-E5w" secondAttribute="bottom" constant="31" id="hK8-PU-e3b"/>
+                            <constraint firstItem="Rer-7f-mM0" firstAttribute="leading" secondItem="c90-oW-uIE" secondAttribute="leading" constant="26" id="i0U-aZ-4EV"/>
+                            <constraint firstItem="Rer-7f-mM0" firstAttribute="centerY" secondItem="BbA-fW-ix7" secondAttribute="centerY" id="icH-H4-GHY"/>
+                            <constraint firstItem="TpJ-lg-nw0" firstAttribute="top" secondItem="c90-oW-uIE" secondAttribute="top" constant="16" id="jyj-Tu-zr0"/>
+                            <constraint firstItem="QLe-Fi-R72" firstAttribute="trailing" secondItem="AFd-WR-wVt" secondAttribute="trailingMargin" id="rK5-jO-0dr"/>
+                            <constraint firstItem="BbA-fW-ix7" firstAttribute="leading" secondItem="Rer-7f-mM0" secondAttribute="trailing" constant="6" id="sG8-3Z-1JY"/>
+                            <constraint firstItem="TpJ-lg-nw0" firstAttribute="leading" secondItem="Yn6-G7-DCN" secondAttribute="trailing" constant="8" symbolic="YES" id="sUh-Bd-j5b"/>
+                            <constraint firstItem="c90-oW-uIE" firstAttribute="trailing" secondItem="RlL-dW-rWi" secondAttribute="trailing" constant="20" id="z0I-ml-LuI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c90-oW-uIE"/>
+                    </view>
+                    <connections>
+                        <outlet property="deadlineLabel" destination="xed-dA-E5w" id="M5H-3h-bQQ"/>
+                        <outlet property="descriptionLabel" destination="8Dm-08-4E8" id="60x-i1-uuw"/>
+                        <outlet property="isCompleted" destination="BbA-fW-ix7" id="uSg-mf-aUO"/>
+                        <outlet property="titleLabel" destination="QLe-Fi-R72" id="vv1-Wi-oTe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUv-3f-DIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="893"/>
+        </scene>
+        <!--New Schedule Page-->
+        <scene sceneID="apq-Tc-6Aw">
+            <objects>
+                <viewController id="hzZ-aP-7AB" customClass="NewSchedulePage" customModule="ScytlAppDefinitivo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ah-5L-uuW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-ep-mys">
+                                <rect key="frame" x="16" y="144" width="288" height="248"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wue-C3-wf8">
+                                <rect key="frame" x="183" y="408" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="No"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="completedSchedule:" destination="hzZ-aP-7AB" eventType="valueChanged" id="N0N-dg-Fgx"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this schedule completed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-zu-aEZ">
+                                <rect key="frame" x="26" y="414" width="151" height="16"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOv-rM-Doz">
+                                <rect key="frame" x="16" y="452" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Ug-Ng-8dB"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-VQ-wuH">
+                                <rect key="frame" x="73" y="512" width="174" height="36"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.050980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <state key="normal" title="Create Schedule">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createSchedule:" destination="hzZ-aP-7AB" eventType="touchUpInside" id="i4E-CL-Lc4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SdS-kp-RLQ">
+                                <rect key="frame" x="16" y="89" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qhN-8R-W7X"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-cr-rjM">
+                                <rect key="frame" x="10" y="35" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="5yE-Vd-azv"/>
+                                    <constraint firstAttribute="height" constant="35" id="cw2-bE-H2D"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="WhiteArrow"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Ufr-3Z-v35"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-JL-dTq">
+                                <rect key="frame" x="53" y="36" width="36" height="32"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="87N-AM-jcT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gcm-JL-dTq" firstAttribute="top" secondItem="ja1-Gp-xHs" secondAttribute="top" constant="16" id="0jQ-gN-cp5"/>
+                            <constraint firstItem="SdS-kp-RLQ" firstAttribute="top" secondItem="Sbw-cr-rjM" secondAttribute="bottom" constant="19" id="54b-Sm-qPo"/>
+                            <constraint firstItem="SdS-kp-RLQ" firstAttribute="trailing" secondItem="4ah-5L-uuW" secondAttribute="trailingMargin" id="55q-cu-PnF"/>
+                            <constraint firstItem="RvP-VQ-wuH" firstAttribute="top" secondItem="BOv-rM-Doz" secondAttribute="bottom" constant="30" id="5FT-Zv-tcv"/>
+                            <constraint firstItem="zd2-ep-mys" firstAttribute="leading" secondItem="BOv-rM-Doz" secondAttribute="leading" id="5uf-Gy-qQx"/>
+                            <constraint firstItem="Wue-C3-wf8" firstAttribute="top" secondItem="zd2-ep-mys" secondAttribute="bottom" constant="16" id="APm-0M-g8w"/>
+                            <constraint firstItem="RvP-VQ-wuH" firstAttribute="leading" secondItem="ja1-Gp-xHs" secondAttribute="leading" constant="73" id="Aey-bM-KpL"/>
+                            <constraint firstItem="Wue-C3-wf8" firstAttribute="leading" secondItem="nZD-zu-aEZ" secondAttribute="trailing" constant="6" id="F55-TE-xWN"/>
+                            <constraint firstItem="zd2-ep-mys" firstAttribute="trailing" secondItem="Wue-C3-wf8" secondAttribute="trailing" id="Gx8-cV-IJ8"/>
+                            <constraint firstItem="SdS-kp-RLQ" firstAttribute="leading" secondItem="zd2-ep-mys" secondAttribute="leading" id="H4d-kG-2AF"/>
+                            <constraint firstItem="nZD-zu-aEZ" firstAttribute="centerY" secondItem="Wue-C3-wf8" secondAttribute="centerY" id="LCv-aa-IFE"/>
+                            <constraint firstItem="Sbw-cr-rjM" firstAttribute="centerY" secondItem="gcm-JL-dTq" secondAttribute="centerY" id="Tjj-La-l2w"/>
+                            <constraint firstItem="SdS-kp-RLQ" firstAttribute="trailing" secondItem="zd2-ep-mys" secondAttribute="trailing" id="VaH-La-m8J"/>
+                            <constraint firstItem="gcm-JL-dTq" firstAttribute="leading" secondItem="Sbw-cr-rjM" secondAttribute="trailing" constant="8" symbolic="YES" id="ZVt-oo-fCc"/>
+                            <constraint firstItem="Sbw-cr-rjM" firstAttribute="top" secondItem="ja1-Gp-xHs" secondAttribute="top" constant="15" id="dx0-7k-GRw"/>
+                            <constraint firstAttribute="bottom" secondItem="RvP-VQ-wuH" secondAttribute="bottom" constant="20" symbolic="YES" id="ePN-NG-n2Z"/>
+                            <constraint firstItem="Wue-C3-wf8" firstAttribute="trailing" secondItem="BOv-rM-Doz" secondAttribute="trailing" id="ejz-8h-3em"/>
+                            <constraint firstItem="zd2-ep-mys" firstAttribute="top" secondItem="SdS-kp-RLQ" secondAttribute="bottom" constant="25" id="fER-MN-5ms"/>
+                            <constraint firstItem="BOv-rM-Doz" firstAttribute="centerX" secondItem="RvP-VQ-wuH" secondAttribute="centerX" id="gCq-5a-uCb"/>
+                            <constraint firstItem="nZD-zu-aEZ" firstAttribute="leading" secondItem="ja1-Gp-xHs" secondAttribute="leading" constant="26" id="gTP-oU-U6o"/>
+                            <constraint firstItem="SdS-kp-RLQ" firstAttribute="leading" secondItem="4ah-5L-uuW" secondAttribute="leadingMargin" id="nNz-7s-H1s"/>
+                            <constraint firstItem="BOv-rM-Doz" firstAttribute="top" secondItem="Wue-C3-wf8" secondAttribute="bottom" constant="16" id="swe-oO-eRq"/>
+                            <constraint firstItem="Sbw-cr-rjM" firstAttribute="leading" secondItem="ja1-Gp-xHs" secondAttribute="leading" constant="10" id="x1c-Jd-crg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ja1-Gp-xHs"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateText" destination="BOv-rM-Doz" id="z26-jy-vEl"/>
+                        <outlet property="descriptionText" destination="zd2-ep-mys" id="8On-2h-tRZ"/>
+                        <outlet property="titleText" destination="SdS-kp-RLQ" id="gJB-ee-hLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swu-wy-vd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596.25" y="134.1549295774648"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Scytl" width="63" height="92"/>
+        <image name="WhiteArrow" width="239.5" height="248"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0jd-hm-O6g"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_ScytlAppDefinitivo {
+  umbrella header "Pods-ScytlAppDefinitivo-umbrella.h"
+
+  export *
+  module * { export * }
+}
